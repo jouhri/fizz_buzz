@@ -1,0 +1,55 @@
+<h1>Fizz Buzz inversé</h1>
+
+<p>Le but est d'afficher la séquence de nombres consécutifs de la plus petite taille possible, qui affiche le resultat voulu en la passant par l'algo FizzBuzz</p>
+<p>(attention, seulement pour Fizz ou Buzz, pas FizzBuzz, et on ne tien pas non plus compte de l'affichage du nombre lui-même).</p>
+<p>Les nombre vont de 1 à 100.</p>
+
+<h3>Clic sur les buttons pour ajout des mots dans la liste puis clic sur valider ;)</h3>
+<button class="btn">Fizz</button>
+<button class="btn">Buzz</button>
+<button class="erase">Suppr</button>
+
+<form action="/" class="form-inline" method="POST">
+  <br/>
+  <label>Liste de mot :</label>
+
+  <p class="array_fb"></p>
+  <input type="hidden" name="content" id="content">
+  <button type="submit" >Valider</button>
+</form>
+
+
+<br/>
+<br/>
+<h4>*Fizzbuzz normal</h4>
+<p>Programme qui va afficher tous les nombres de 1 à 100, sauf si le nombre est divisible par 3 auquel cas on affiche "Fizz",</p>
+<p>sauf si le nombre est divisible par 5 auquel cas on affiche  "Buzz", sauf si le nombre est divisible par 3 et 5 auquel cas on affiche "FizzBuzz".</p>
+
+<script type="text/javascript">
+
+var nb_word = 0
+
+
+$('.btn').click(function(){
+  if($('.array_fb').text() == "")
+  {
+    $('.array_fb').text($(this).text());
+  }
+  else
+  {
+    $('.array_fb').text($('.array_fb').text() + ', ' + $(this).text());
+  }
+  $('#content').val($('.array_fb').text());
+  nb_word = nb_word + 1;
+});
+
+$('.erase').click(function(){
+  if(nb_word > 0)
+  {
+    nb_word = nb_word - 1
+    $('.array_fb').text($('.array_fb').text().split(", ", nb_word).join(", "));
+    $('#content').val($('.array_fb').text());
+  }
+});
+
+</script>

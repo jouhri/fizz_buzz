@@ -1,0 +1,15 @@
+<h3>Séquence :</h3>
+<%if @result == [] %>
+  <p>Aucune sèquence trouvé</p>
+<%else%>
+  <p><%= @result %></p>
+
+  <h3>Résultats avec l'aglo Fizzbuzz normal et la séquence <%= @result %> :</h3>
+  <p><%= @word_result %></p>
+<%end%>
+
+<br/> 
+
+<p><a href="/">Back</a></p>
+
+
